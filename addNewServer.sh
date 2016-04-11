@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sshKeys=''
-ansibbleHostsPath='/opt/local/etc/ansible/hosts'
+ansibleHostsPath='/opt/local/etc/ansible/hosts'
 
 read -p 'server ip: ' serverIp
 read -p 'ssh config server name: ' serverName
@@ -36,4 +36,4 @@ User root" >> ~/.ssh/config
 
 # add new server into ansible (use php instead of sed for OS X compatibility)
 serverGroup='['$serverGroup']'
-php -r 'file_put_contents($argv[3], str_replace($argv[1], "$argv[1]\n$argv[2]", file_get_contents($argv[3])));' $serverGroup $serverName $ansibbleHostsPath
+php -r 'file_put_contents($argv[3], str_replace($argv[1], "$argv[1]\n$argv[2]", file_get_contents($argv[3])));' $serverGroup $serverName $ansibleHostsPath
