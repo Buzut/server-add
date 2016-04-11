@@ -12,7 +12,7 @@ newRootPass=`openssl rand -base64 32`
 
 # config ssh & login for automatic connection via ssh key
 ssh root@$serverIp /bin/bash <<ENDSSH
-    # add our ssh keys to root user authorized_keys
+    # add our ssh keys to root user's authorized_keys
     cd /root
     mkdir -p .ssh
     echo "$sshKeys" >> .ssh/authorized_keys
