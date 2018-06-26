@@ -25,6 +25,9 @@ ssh root@$serverIp /bin/bash <<ENDSSH
 
     # change root password
     echo "root:$newRootPass" | chpasswd
+    
+    # alias python3 to python for ansible to work (ubuntu 18.04)
+    ln -s /usr/bin/python3.6 /usr/bin/python
 
     exit
 ENDSSH
